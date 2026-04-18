@@ -1,0 +1,56 @@
+.coursework-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding-top: 2rem;
+}
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 2rem;
+  min-height: 250px;
+}
+
+.course-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.course-icon {
+  color: var(--accent-secondary);
+}
+
+.course-year {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  background: var(--bg-primary);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+}
+
+.course-title {
+  color: var(--text-primary);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.course-details {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  flex-grow: 1;
+  line-height: 1.6;
+}
+
+.course-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}

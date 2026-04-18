@@ -1,0 +1,166 @@
+.horizontal-scroll-container {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 2rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--text-muted) var(--bg-card);
+  cursor: grab;
+}
+
+.horizontal-scroll-container:active {
+  cursor: grabbing;
+}
+
+/* Custom Horizontal Scrollbar */
+.horizontal-scroll-container::-webkit-scrollbar {
+  height: 10px;
+}
+.horizontal-scroll-container::-webkit-scrollbar-track {
+  background: var(--bg-card);
+  border-radius: 8px;
+}
+.horizontal-scroll-container::-webkit-scrollbar-thumb {
+  background: var(--glass-border-hover);
+  border-radius: 8px;
+}
+.horizontal-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-secondary);
+}
+
+.projects-slider {
+  display: inline-flex;
+  gap: 3rem;
+  padding: 1rem 0;
+}
+
+.project-card-v2 {
+  flex: 0 0 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-image-container {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  background: var(--bg-secondary);
+  display: flex;
+}
+
+.project-count {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10;
+  background: var(--bg-primary); /* Uses theme primary */
+  backdrop-filter: blur(8px);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  border: 1px solid var(--glass-border);
+}
+
+.project-count .slash {
+  color: var(--accent-secondary);
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  filter: grayscale(80%);
+}
+
+/* Fix for Ridal Landscape aspect ratios: Using contain instead of cover */
+.project-image.split-img {
+  width: 50%;
+  object-fit: contain; /* Prevents landscape scaling cutoff */
+  object-position: center;
+  background: var(--bg-primary); /* Fills empty padding space cleanly */
+}
+.project-image.split-img:first-of-type {
+  border-right: 1px solid var(--glass-border);
+}
+
+.project-card-v2:hover .project-image {
+  transform: scale(1.05); /* Works nicely even with contain */
+  filter: grayscale(0%);
+}
+
+.project-image-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.project-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.project-type {
+  color: var(--accent-secondary);
+  font-size: 0.85rem;
+}
+
+.external-link {
+  color: var(--text-primary);
+}
+
+.external-link:hover {
+  color: var(--accent-secondary);
+  transform: translateY(-2px);
+}
+
+.project-title {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.project-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.project-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.tech-tag {
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .project-card-v2 {
+    flex: 0 0 85vw;
+  }
+}
