@@ -189,4 +189,14 @@
   .project-card-v2 {
     flex: 0 0 85vw;
   }
+
+  .project-image {
+    filter: grayscale(0%);
+  }
+}
+
+@media (hover: none) {
+  .project-image {
+    filter: grayscale(0%);
+  }
 }
