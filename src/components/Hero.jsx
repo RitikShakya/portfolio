@@ -3,6 +3,21 @@ import { ArrowRight, Download, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import './Hero.css';
 
+const PROJECT_IMAGES = [
+  'ridal_taglines.png',
+  'inspiringseniors_ss.png',
+  'HFN_what.png',
+  'iprep_superappss.png',
+  'infigon_landing_page.png',
+];
+
+const preloadProjectImages = () => {
+  PROJECT_IMAGES.forEach((filename) => {
+    const img = new Image();
+    img.src = `${import.meta.env.BASE_URL}${filename}`;
+  });
+};
+
 const Hero = () => {
   const [text, setText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -118,8 +133,9 @@ const Hero = () => {
               src={`${import.meta.env.BASE_URL}profile.jpeg`}
               alt="Ritik Shakya"
               decoding="async"
+              fetchpriority="high"
               className="profile-img"
-              onLoad={(e) => e.target.classList.add('loaded')}
+              onLoad={(e) => { e.target.classList.add('loaded'); preloadProjectImages(); }}
               onError={(e) => {
                 e.target.src = `${import.meta.env.BASE_URL}profile.jpg`;
                 e.target.onerror = () => {
