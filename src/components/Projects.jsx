@@ -90,21 +90,27 @@ const Projects = () => {
                   0{index + 1} <span className="slash">/</span> 0{projects.length}
                 </div>
                 
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  loading="lazy"
+                  decoding="async"
                   className={`project-image ${project.secondaryImage ? 'split-img' : ''}`}
+                  onLoad={(e) => e.target.classList.add('loaded')}
                   onError={(e) => {
                     e.target.style.display = 'none';
                     e.target.nextSibling.style.display = 'flex';
                   }}
                 />
-                
+
                 {project.secondaryImage && (
-                  <img 
-                    src={project.secondaryImage} 
-                    alt={`${project.title} secondary`} 
+                  <img
+                    src={project.secondaryImage}
+                    alt={`${project.title} secondary`}
+                    loading="lazy"
+                    decoding="async"
                     className="project-image split-img secondary-img"
+                    onLoad={(e) => e.target.classList.add('loaded')}
                     onError={(e) => {
                       e.target.style.display = 'none';
                     }}

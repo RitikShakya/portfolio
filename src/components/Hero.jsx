@@ -114,10 +114,12 @@ const Hero = () => {
             transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
             whileHover={{ scale: 1.05, rotateZ: 0 }}
           >
-            <img 
+            <img
               src={`${import.meta.env.BASE_URL}profile.jpeg`}
               alt="Ritik Shakya"
+              decoding="async"
               className="profile-img"
+              onLoad={(e) => e.target.classList.add('loaded')}
               onError={(e) => {
                 e.target.src = `${import.meta.env.BASE_URL}profile.jpg`;
                 e.target.onerror = () => {

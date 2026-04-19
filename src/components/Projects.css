@@ -51,6 +51,27 @@
   display: flex;
 }
 
+.project-image-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.04) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.4s ease;
+}
+
+.project-image-container:has(.project-image.loaded)::after {
+  opacity: 0;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
 .project-count {
   position: absolute;
   top: 1rem;
@@ -74,8 +95,13 @@
   height: 100%;
   object-fit: cover;
   object-position: top;
-  transition: transform 0.5s ease, filter 0.5s ease;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.5s ease, filter 0.5s ease;
   filter: grayscale(80%);
+}
+
+.project-image.loaded {
+  opacity: 1;
 }
 
 /* Fix for Ridal Landscape aspect ratios: Using contain instead of cover */
