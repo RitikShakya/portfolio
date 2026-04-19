@@ -85,7 +85,7 @@ const Hero = () => {
             <a href="#projects" className="btn btn-primary">
               View Work <ArrowRight size={18} />
             </a>
-            <a href="/resume.pdf" target="_blank" rel="noreferrer" className="btn btn-outline">
+            <a href={`${import.meta.env.BASE_URL}resume.pdf`} target="_blank" rel="noreferrer" className="btn btn-outline">
               Resume <Download size={18} />
             </a>
             <a href="#contact" className="btn btn-icon btn-outline">
@@ -115,11 +115,11 @@ const Hero = () => {
             whileHover={{ scale: 1.05, rotateZ: 0 }}
           >
             <img 
-              src="/profile.jpeg" 
-              alt="Ritik Shakya" 
+              src={`${import.meta.env.BASE_URL}profile.jpeg`}
+              alt="Ritik Shakya"
               className="profile-img"
               onError={(e) => {
-                e.target.src = '/profile.jpg';
+                e.target.src = `${import.meta.env.BASE_URL}profile.jpg`;
                 e.target.onerror = () => {
                   e.target.src = 'https://ui-avatars.com/api/?name=Ritik+Shakya&size=400&background=000&color=fff';
                 };

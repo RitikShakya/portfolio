@@ -18,7 +18,7 @@ const Projects = () => {
       tech: ["Full Ownership (Frontend & Backend)", "Conceptualization", "UI/UX", "Firebase"],
       liveLink: "#",
       type: "Startup Ideation",
-      image: "/ridal_taglines.png"
+      image: `${import.meta.env.BASE_URL}ridal_taglines.png`
     },
     {
       title: "Inspiring Seniors Web App",
@@ -26,7 +26,7 @@ const Projects = () => {
       tech: ["React", "Firebase", "Twilio", "Meta API"],
       liveLink: "https://inspiringseniors.org/homepage",
       type: "Web Platform",
-      image: "/inspiringseniors_ss.png"
+      image: `${import.meta.env.BASE_URL}inspiringseniors_ss.png`
     },
     {
       title: "HFN Kisaan Saarthi App",
@@ -34,7 +34,7 @@ const Projects = () => {
       tech: ["Flutter", "Dart", "Firebase", "Amplitude"],
       liveLink: "https://play.google.com/store/apps/details?id=com.hfn.kisaan_app.hfn_kisaan_app",
       type: "Mobile App",
-      image: "/HFN_what.png"
+      image: `${import.meta.env.BASE_URL}HFN_what.png`
     },
     {
       title: "iDream Educational Suite",
@@ -42,7 +42,7 @@ const Projects = () => {
       tech: ["Flutter", "BLoC", "SQLite", "Hive", "REST APIs"],
       liveLink: "https://play.google.com/store/apps/details?id=org.idreameducation.iprepapp",
       type: "Ecosystem / Mobile Apps",
-      image: "/iprep_superappss.png"
+      image: `${import.meta.env.BASE_URL}iprep_superappss.png`
     },
     {
       title: "Infigon Futures",
@@ -50,7 +50,7 @@ const Projects = () => {
       tech: ["Flutter", "Node.js", "Firebase"],
       liveLink: "",
       type: "Internship Project",
-      image: "/infigon_landing_page.png"
+      image: `${import.meta.env.BASE_URL}infigon_landing_page.png`
     }
   ];
 
